@@ -1,1 +1,1 @@
-# vind-home projects
+# wind-home projects
