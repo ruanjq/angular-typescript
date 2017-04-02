@@ -1,0 +1,19 @@
+{
+  "name": "wind-home",
+  "version": "1.0.0",
+  "description": "wind home project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanjq/windHome.git"
+  },
+  "author": "ruanjq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruanjq/windHome/issues"
+  },
+  "homepage": "https://github.com/ruanjq/windHome#readme"
+}
