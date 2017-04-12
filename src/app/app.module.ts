@@ -33,7 +33,7 @@ const routerConfig:Routes = [
 @NgModule({
 	imports:[
 		BrowserModule,
-		RouterModule.forRoot(routerConfig)
+		RouterModule.forRoot(routerConfig,{ useHash: true })
 	],
 	declarations:[
 		AppComponent,
