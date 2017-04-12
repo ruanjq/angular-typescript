@@ -7,9 +7,7 @@ import { Component } from '@angular/core';
 	selector:'details-page',
 	templateUrl:'./details.component.html',
 	styles:	[
-		`
-		h1{color:red;}
-	`
+		
 	]
 })
 
