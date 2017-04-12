@@ -14,7 +14,17 @@ module.exports = webpackMerge(commonConfig, {
         filename: 'js/[name].[hash].js',
         chunkFilename: '[id].[hash].chunk.js'
     },
-
+    module: {
+        rules: [{
+            test: /\.less$/,
+            include: helpers.root('src', 'app'),
+            loader: ExtractTextPlugin.extract({
+                fallbackLoader: "style-loader",
+                loader: "css-loader!less-loader"
+            })
+        }],
+        exprContextCritical: false
+    },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618

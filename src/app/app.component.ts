@@ -1,7 +1,7 @@
 
 
 import { Component } from '@angular/core';
-import '../styles/css/style.css';
+import '../styles/less/styles.less';
 
 @Component({
 	selector:'app',
