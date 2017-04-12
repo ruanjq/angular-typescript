@@ -4,8 +4,12 @@
  */
 @font-face {
   font-family: 'FontAwesome';
-  src: url(windHome/dist/fonts/fontawesome-webfont.32400f4e08932a94d8bfd2422702c446.eot);
-  src: url(windHome/dist/fonts/fontawesome-webfont.32400f4e08932a94d8bfd2422702c446.eot) format('embedded-opentype'), url(windHome/dist/fonts/fontawesome-webfont.db812d8a70a4e88e888744c1c9a27e89.woff2) format('woff2'), url(windHome/dist/fonts/fontawesome-webfont.a35720c2fed2c7f043bc7e4ffb45e073.woff) format('woff'), url(windHome/dist/fonts/fontawesome-webfont.a3de2170e4e9df77161ea5d3f31b2668.ttf) format('truetype'), url(windHome/dist/fonts/fontawesome-webfont.f775f9cca88e21d45bebe185b27c0e5b.svg) format('svg');
+  src: url(../fonts/fontawesome-webfont.32400f4e08932a94d8bfd2422702c446.eot);
+  src: url(../fonts/fontawesome-webfont.32400f4e08932a94d8bfd2422702c446.eot) format('embedded-opentype'), 
+  url(../fonts/fontawesome-webfont.db812d8a70a4e88e888744c1c9a27e89.woff2) format('woff2'),
+   url(../fonts/fontawesome-webfont.a35720c2fed2c7f043bc7e4ffb45e073.woff) format('woff'), 
+   url(../fonts/fontawesome-webfont.a3de2170e4e9df77161ea5d3f31b2668.ttf) format('truetype'),
+    url(../fonts/fontawesome-webfont.f775f9cca88e21d45bebe185b27c0e5b.svg) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -4578,7 +4582,7 @@ img.comment_emo {
 .comment_avatar {
   height: 48px;
   width: 48px;
-  background: #F0F0F0 url(windHome/dist/images/anon48.gif) no-repeat center center;
+  background: #F0F0F0 url(windHome/../images/anon48.gif) no-repeat center center;
   float: left;
   margin-right: 10px;
   -webkit-border-radius: 6px;
@@ -5119,4 +5123,4 @@ body.error_page {
   }
 }
 
-/*# sourceMappingURL=app.564ac05e8b0c75597424.css.map*/
+/*# sourceMappingURL=app.f48e069b5443d8d9090b.css.map*/

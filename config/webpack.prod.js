@@ -15,23 +15,7 @@ module.exports = webpackMerge(commonConfig, {
         chunkFilename: '[id].[hash].chunk.js'
     },
     module: {
-        rules: [{
-            test: /\.less$/,
-            include: helpers.root('src', 'app'),
-            loader: ExtractTextPlugin.extract({
-                fallbackLoader: "style-loader",
-                loader: "css-loader!less-loader",
-                publicPath: "../../../"     // 过滤文件中的fonts 路径
-            })
-        }, {
-            test: /\.css$/,
-            include: /node_modules/,
-            loader: ExtractTextPlugin.extract({
-                fallbackLoader: "style-loader",
-                loader: "css-loader",
-                publicPath: "../../../"     // 过滤 ionicons/dist/scss/ionicons 文件中的fonts 路径
-            })
-        }],
+        rules: [],
         exprContextCritical: false
     },
     plugins: [
