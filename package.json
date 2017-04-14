@@ -33,6 +33,7 @@
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.16.1",
     "jasmine-core": "^2.4.1",
+    "leancloud-storage": "^2.1.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
     "null-loader": "^0.1.1",

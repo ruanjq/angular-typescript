@@ -4,13 +4,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
-
 module.exports = webpackMerge(commonConfig, {
     devtool: 'source-map',
 
     output: {
         path: helpers.root('dist'),
-        publicPath: 'dist/',
+        publicPath: 'http://www.windhome.win/dist/',
         filename: 'js/[name].[hash].js',
         chunkFilename: '[id].[hash].chunk.js'
     },
@@ -23,17 +22,21 @@ module.exports = webpackMerge(commonConfig, {
         new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
             mangle: {
                 keep_fnames: true
-            }
+            },
+            compress: {
+                warnings: true
+            },
+            comments:false
         }),
         new ExtractTextPlugin('css/[name].[hash].css'),
         new webpack.DefinePlugin({
-            process:{
+            process: {
                 env: '"production"'
             }
         }),
         new webpack.LoaderOptionsPlugin({
             htmlLoader: {
-                minimize: false // workaround for ng2
+                minimize: true // workaround for ng2
             }
         }),
         new HtmlWebpackPlugin({
