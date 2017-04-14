@@ -10,7 +10,7 @@
                     <dt class="profile-data">
                         <h2>关于我</h2>
                         <a class="profile-name-link g-profile" href="https://www.blogger.com/profile/11342359649571251359" rel="author" data-gapiscan="true" data-onload="true" data-gapiattached="true">
-										web功臣师
+										web功臣师 
 									</a>
                     </dt>
                     <dd class="profile-textblock">
@@ -35,34 +35,25 @@
             <div class="blog-posts hfeed">
                 <div class="date-outer">
 
-                    <div class="date-posts" *ngFor="let item of blogList">
+                    <div class="date-posts"  *ngFor="let item of blogList" >
                         <div class="post-outer">
                             <div class="wrapfullpost">
                                 <div class="post hentry">
                                     <div class="post-header-line-1"></div>
-                                    <div class="post-body entry-content" id="post-body-2045768597497455817" itemprop="articleBody">
+                                    <div class="post-body entry-content"itemprop="articleBody">
                                         <div class="post-home">
                                             <div class="post-info">
                                                 <div class="ininfo">
                                                     <h2 class="post-title entry-title" itemprop="name">
-														<a [routerLink]="['/blogs-read', item.blog_id]">{{item.title}}</a>
+														<a [routerLink]="['/blogs-read', item.blog_id]">{{item.blog_title}}</a>
 													</h2>
                                                     <div class="postmeta-primary">
                                                         <span class="meta_date">
-                                                        	<i aria-hidden="true" class="fa fa-clock-o"></i>&nbsp;{{item.blog_create_time | date:'yyyy/MM/dd/ HH:mm:ss'}}
+                                                        	<i aria-hidden="true" class="fa fa-clock-o"></i>&nbsp;{{item.blog_create_time}}
 														</span> &nbsp;
                                                         <span class="meta_categories">
 															<i aria-hidden="true" class="fa fa-tags"></i>
                                                             {{item.blog_tags}}
-															<!-- <a href="http://isimpletheme.blogspot.hk/search/label/Featured%20Posts?&amp;max-results=9" rel="tag">
-                                                                随笔杂谈,
-                                                                                                                        </a>
-                                                            <a href="http://isimpletheme.blogspot.hk/search/label/Nature?&amp;max-results=9" rel="tag">
-                                                                随笔杂谈,
-                                                                                                                          </a>
-                                                            <a href="http://isimpletheme.blogspot.hk/search/label/Related?&amp;max-results=9" rel="tag">
-                                                                随笔杂谈
-                                                                                                                          </a> -->
 			                                          	</span>
                                                     </div>
 
@@ -76,7 +67,7 @@
                                                     	<div class="mcontent">
                                                             {{item.blog_summary}}
                                                     	</div>
-                                                        <a class="read-more" [routerLink]="['/blogs-read', item.blog_id]">Continue Reading {{item.blog_id}}<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                                        <a class="read-more" [routerLink]="['/blogs-read', item.blog_id]">Continue Reading<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
                                                     </div>
                                                     <div class="data-snippet"></div>
                                                 </div>
