@@ -8,7 +8,7 @@ const variable = {
 		if(process.env === 'dev'){
 			return "http://localhost:8891/src/json/";
 		}else{
-			return "";
+			return "http://www.windhome.win/src/json/";
 		}
 	}
 }
