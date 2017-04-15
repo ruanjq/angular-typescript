@@ -1,6 +1,6 @@
+import { Router, NavigationEnd } from '@angular/router';	
 
-
-import { Component } from '@angular/core';
+import { Component,OnInit  } from '@angular/core';
 
 import '../styles/less/styles';
 
@@ -10,6 +10,18 @@ import '../styles/less/styles';
 	styleUrls :['./app.component.css']
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit {
 
+	constructor(private router: Router){
+
+	}
+
+	ngOnInit() {
+        this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0)
+        });
+    }
 }

@@ -4,7 +4,7 @@
         <div class="widget Profile" data-version="1" id="Profile1">
             <div class="widget-content">
                 <a href="https://www.blogger.com/profile/11342359649571251359">
-                    <img alt="My photo" class="profile-img" height="71" src="../../images/display2.png" width="80">
+                    <img alt="My photo" class="profile-img" height="71" src="../../images/avatar.jpg" width="80">
                 </a>
                 <dl class="profile-datablock">
                     <dt class="profile-data">
@@ -14,15 +14,23 @@
 									</a>
                     </dt>
                     <dd class="profile-textblock">
-                        敲一夜代码，流两行老泪；用三种语言，唯四肢受罪 ； 待五更鸡鸣，遇骤雨初歇；遂登门而去，伫十里长亭；欲望穿泪眼，无如意郎君；借微薄助力，愿寻得佳偶；成比翼双鸟，乃畅想云端；卷情网之内，做爬虫抓取；为连理桂枝,容数据分析；思千里子规，助框广天地； 念茫茫人海，该如何寻觅？
+                        敲一夜代码,流两行老泪; 
+                        用三种语言,唯四肢受罪; 
+                        待五更鸡鸣,遇骤雨初歇;
+                        遂登门而去,伫十里长亭;
+                        欲望穿泪眼,无如意郎君; 
+                        借微薄助力,愿寻得佳偶; 
+                        成比翼双鸟,乃畅想云端; 
+                        卷情网之内,做爬虫抓取; 
+                        为连理桂枝,容数据分析; 
+                        思千里子规,助框广天地; 
+                        念茫茫人海,该如何寻觅？
                     </dd>
-                    <!-- <a class="profile-link" href="" rel="author">View my complete profile</a> -->
                 </dl>
                 <div class="clear"></div>
                 <span class="widget-item-control">
 					<span class="item-control blog-admin">
 						<a class="quickedit" href="//www.blogger.com/rearrange?blogID=2528409937020339180&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget&amp;sectionId=main-top" onclick="return _WidgetManager._PopupConfig(document.getElementById(&quot;Profile1&quot;));" target="configProfile1" title="Edit">
-						<!-- <img alt="" height="18" src="https://resources.blogblog.com/img/icon18_wrench_allbkg.png" width="18"> -->
 						</a>
 					</span>
                 </span>
@@ -33,53 +41,97 @@
     <div class="main section" id="main">
         <div class="widget Blog" data-version="1" id="Blog1">
             <div class="blog-posts hfeed">
-                <div class="date-outer">
-
-                    <div class="date-posts"  *ngFor="let item of blogList" >
-                        <div class="post-outer">
-                            <div class="wrapfullpost">
-                                <div class="post hentry">
-                                    <div class="post-header-line-1"></div>
-                                    <div class="post-body entry-content"itemprop="articleBody">
-                                        <div class="post-home">
-                                            <div class="post-info">
-                                                <div class="ininfo">
-                                                    <h2 class="post-title entry-title" itemprop="name">
-														<a [routerLink]="['/blogs-read', item.blog_id]">{{item.blog_title}}</a>
-													</h2>
-                                                    <div class="postmeta-primary">
-                                                        <span class="meta_date">
-                                                        	<i aria-hidden="true" class="fa fa-clock-o"></i>&nbsp;{{item.blog_create_time}}
-														</span> &nbsp;
-                                                        <span class="meta_categories">
-															<i aria-hidden="true" class="fa fa-tags"></i>
-                                                            {{item.blog_tags}}
-			                                          	</span>
-                                                    </div>
-
-                                                    <div class="post-thumb">
-                                                        <a [routerLink]="['/blogs-read', item.blog_id]">
-                                                            <img [src]="item.blog_thumbnail">
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="post-content">
-                                                    	<div class="mcontent">
-                                                            {{item.blog_summary}}
-                                                    	</div>
-                                                        <a class="read-more" [routerLink]="['/blogs-read', item.blog_id]">Continue Reading<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
-                                                    </div>
-                                                    <div class="data-snippet"></div>
-                                                </div>
+                <!-- loading.... -->
+                <div class="post-outer loading" *ngIf="blogList.length == 0">
+                    <div class="wrapfullpost">
+                        <div class="post hentry">
+                            <div class="post-header-line-1"></div>
+                            <div class="post-body entry-content" itemprop="articleBody">
+                                <div class="post-home">
+                                    <div class="post-info">
+                                        <div class="ininfo">
+                                            <h2 class="post-title entry-title" itemprop="name">
+                                                <a>&nbsp;&nbsp; </a>
+                                            </h2>
+                                            <div class="postmeta-primary">
+                                                <span class="meta_date">
+                                                    <i aria-hidden="true" class="fa fa-clock-o"></i>&nbsp;
+                                                        <span class="date_empty"></span>
+                                                </span> &nbsp;
+                                                <span class="meta_categories">
+                                                                    <i aria-hidden="true" class="fa fa-tags"></i>
+                                                    &nbsp; <span class="tag_empty"></span>
+                                                                  </span>
                                             </div>
+            
+                                            <div class="post-thumb">
+                                                <a></a>
+                                            </div>
+            
+                                            <div class="post-content">
+                                                <div>
+                                                    <p class="p1">&nbsp;</p>
+                                                    <p class="p2">&nbsp;</p>
+                                                    <p class="p3">&nbsp;</p>
+                                                </div>
+                                                <a class="read-more">Continue Reading<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                            <div class="data-snippet"></div>
                                         </div>
                                     </div>
-                                    <div class="post-footer">
-                                        <div class="post-footer-line post-footer-line-"></div>
-                                        <div class="post-footer-line post-footer-line-2"></div>
-                                        <div class="post-footer-line post-footer-line-3">
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-footer-line post-footer-line-"></div>
+                                <div class="post-footer-line post-footer-line-2"></div>
+                                <div class="post-footer-line post-footer-line-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="post-outer"  *ngFor="let item of blogList">
+                    <div class="wrapfullpost">
+                        <div class="post hentry">
+                            <div class="post-header-line-1"></div>
+                            <div class="post-body entry-content" itemprop="articleBody">
+                                <div class="post-home">
+                                    <div class="post-info">
+                                        <div class="ininfo">
+                                            <h2 class="post-title entry-title" itemprop="name">
+                                                                <a [routerLink]="['/blogs-read', item.blog_id]">{{item.blog_title}}</a>
+                                                            </h2>
+                                            <div class="postmeta-primary">
+                                                <span class="meta_date">
+                                                    <i aria-hidden="true" class="fa fa-clock-o"></i>&nbsp;{{item.blog_create_time | dateFormat :'YYYY/MM/dd HH:mm:ss'}}
+                                                                </span> &nbsp;
+                                                <span class="meta_categories">
+                                                                    <i aria-hidden="true" class="fa fa-tags"></i>
+                                                    {{item.blog_tags}}
+                                                                  </span>
+                                            </div>
+                            
+                                            <div class="post-thumb">
+                                                <a [routerLink]="['/blogs-read', item.blog_id]">
+                                                    <img [src]="item.blog_thumbnail">
+                                                </a>
+                                            </div>
+                            
+                                            <div class="post-content">
+                                                <div class="mcontent">
+                                                    {{item.blog_summary}}
+                                                </div>
+                                                <a class="read-more" [routerLink]="['/blogs-read', item.blog_id]">Continue Reading<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                            <div class="data-snippet"></div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-footer-line post-footer-line-"></div>
+                                <div class="post-footer-line post-footer-line-2"></div>
+                                <div class="post-footer-line post-footer-line-3">
                                 </div>
                             </div>
                         </div>

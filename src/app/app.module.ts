@@ -7,6 +7,7 @@ import { RouterModule,Routes} from '@angular/router';
 
 import { HttpModule } from '@angular/http';
 
+import { Variable } from '../js/modules/constConfig';
 
 
 // 自定义组件
@@ -18,8 +19,8 @@ import { ResumeComponent } from '../component/resume/resume.component';
 import { AboutComponent } from '../component/about/about.component';
 import { SideBarComponent } from '../component/sideBar/sideBar.component';
 
-
-
+// 自定义管道
+import { DateFormatPipe } from '../js/modules/dateFormat.pipe';
 
 
 
@@ -49,29 +50,14 @@ const routerConfig:Routes = [
 		DetailsComponent,
 		BlogsListComponent,
 		ResumeComponent,
-		AboutComponent,SideBarComponent
+		AboutComponent,SideBarComponent,DateFormatPipe
 	],
+	providers:[Variable],
 	bootstrap: [ AppComponent ]
 })
 
 export class AppModule {
 	constructor(){
-		// window.onload = function() {
-		// 	window.scrollTo(0, 0);
-		// }
-		// router.events.subscribe(event =>{
-		// 	if(event instanceof NavigationStart) {
-				
-		// 		setTimeout(() => {
-		// 			console.log(888);
-		// 			window.scrollTo(0, 0);
-		// 		},2500)
-		//     }
-		//     // NavigationStart
-		//     // NavigationEnd
-		//     // NavigationCancel
-		//     // NavigationError
-		//     // RoutesRecognized
-		// });
+		
 	}
 }
