@@ -41,7 +41,14 @@ module.exports = webpackMerge(commonConfig, {
         }),
         new HtmlWebpackPlugin({
             filename: '../index.html',
-            template: 'src/index.html'
+            template: 'src/index.html',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+                // more options:
+                // https://github.com/kangax/html-minifier#options-quick-reference
+            }
         })
     ]
 });

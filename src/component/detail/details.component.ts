@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
         this.blogsService.getBlogById(parseInt(this.blogs_id)).then(data => {
         	this.blogInfo = data;
-        	console.log(data);
+        	// console.log(data);
         });
     }
 

@@ -38,16 +38,18 @@ module.exports = {
         }, {
             test: /\.css$/,
             exclude: helpers.root('src', 'app'),
-            loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap!!postcss-loader' })
+            loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?minimize?sourceMap' })
+           
         }, {
             test: /\.css$/,
             include: helpers.root('src', 'app'),
-            loader: 'raw-loader!postcss-loader'
+            loader: 'raw-loader'
+            
         }, {
             test: /\.less$/,
             loader: ExtractTextPlugin.extract({
                 fallbackLoader: "style-loader",
-                loader: "css-loader!less-loader!postcss-loader"
+                loader: "css-loader?minimize!less-loader"
             })
         }],
         exprContextCritical: false

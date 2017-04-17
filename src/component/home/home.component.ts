@@ -18,12 +18,12 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit(){
-		/*this.blogsService.getAllList().then( (data:any) => {
+		this.blogsService.getAllList().then( (data:any) => {
 			console.log(data);
 			this.blogList = data;
 		},err => {
 
-		})*/
+		})
 		
 	}
 }
