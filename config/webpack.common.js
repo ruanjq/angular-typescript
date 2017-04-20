@@ -29,10 +29,10 @@ module.exports = {
             test: /\.(woff|woff2|ttf|eot|svg)$/,
             loader: 'file-loader?name=fonts/[name].[hash].[ext]'
         }, {
-            test: /\.(png|jpg|jpeg|gif)(\?.*)?$/,
+            test: /\.(png|jpg|jpeg|gif|ico)(\?.*)?$/,
             loader: 'url-loader',
             query: {
-                limit: 1, // 小于 这个数值使用base转换
+                limit: 1, 
                 name: 'images/[name].[ext]'
             }
         }, {

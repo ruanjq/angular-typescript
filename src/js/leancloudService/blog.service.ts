@@ -11,6 +11,9 @@ export class BlogsService {
 
     private blogsObject: any;
 
+    public pageSize: number = 5;
+
+    public page: number = 1;
 
     constructor() {
         this.blogsObject = this.AV.Object.extend(this.table_name);
@@ -21,8 +24,8 @@ export class BlogsService {
      * [getAllList description]
      * @return {Promise<Blog[]>} [description]
      */
-    getAllList(): Promise < Blog[] > {
-        let sql = `select * from ${this.table_name}`;
+    private getAllList(sql:string): Promise < Blog[] > {
+        
         return new Promise((resolve, reject) => {
 
             this.AV.Query.doCloudQuery(sql).then((res: any) => {
@@ -42,6 +45,55 @@ export class BlogsService {
                 reject(err);
             });
         });
+    }
+
+
+    public getPageList(pageIndex:number): Promise < any > {
+        return new Promise((resolve,reject) => {
+            this.getDataTotal().then(total => {
+                let pageTotal = this.calcPageCount(total,this.pageSize);
+                let sql = `select * from ${this.table_name} limit ${this.pageSize * (pageIndex - 1)},${this.pageSize * pageIndex}`;
+                console.log("分页查询语句" + sql);
+                this.getAllList(sql).then( data => {
+                    resolve({
+                        pageIndex:pageIndex,
+                        pageCount:pageTotal,
+                        total:total,
+                        data:data
+                    });
+                });
+            }).catch( (err:any) => {
+                reject(err);
+            });
+        });
+    }
+
+
+    /**
+     * [ 查询博客的总数 ]
+     * @return {Promise<number>} [description]
+     */
+    getDataTotal(): Promise < number > {
+        let sql = `select count(*) from ${this.table_name}`;
+        return new Promise((resolve, reject) => {
+            this.AV.Query.doCloudQuery(sql).then((res: any) => {
+                resolve(res.count);
+            }).catch((err: any) => {
+                reject(err);
+            })
+        });
+    }
+
+    /**
+     * [ 计算总页数 ]
+     * @param  {number} total    [description]
+     * @param  {number} pageSize [description]
+     * @return {number}          [description]
+     */
+    private calcPageCount(total: number, pageSize: number): number {
+        let pageCount: number = 0;
+        pageCount = total % pageSize == 0 ? total / pageSize : Math.floor(total / pageSize) + 1;
+        return pageCount;
     }
 
 
@@ -71,5 +123,7 @@ export class BlogsService {
             });
         });
     }
+
+
 
 }

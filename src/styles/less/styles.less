@@ -2525,8 +2525,22 @@ tt {
     width: 100%;
     position: fixed;
     background: #111;
-    z-index: 1;
+    z-index: 8;
     display: none;
+    &.backdrop_enter{
+        display: block;content: '';bottom:0;background: rgba(0,0,0,0.8);z-index: 9;
+        position: fixed;top:0; left:0;right:0;
+        animation:opacityGradient 0.35s linear alternate;
+    }
+}
+
+@keyframes opacityGradient{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .mobile-header div {
@@ -2624,16 +2638,10 @@ h2.date-header {
 
 .sidebar a:hover {}
 
-.sidebar .widget a {
-    font-weight: 300;
-    text-decoration: none;
-    color: #9c9c9c;
-    line-height: 24px;
-    font-size: 17px;
-}
+
 
 .sidebar h2 {
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
     padding: 0;
     color: #FFF;
     font-size: 18px;
@@ -2800,16 +2808,38 @@ td.gsc-search-button {
     font-size: 16px;
 }
 
-.sidebar .Label a {
-    font-weight: 300;
-    color: #9c9c9c;
-    line-height: 24px;
-    font-size: 17px;
+
+
+.categorys-list{
+    li{
+        margin: 0; 
+        padding: 12px 5px;border-bottom:1px solid rgba(255,255,255,.1);
+        a{
+            line-height: 24px;
+            font-size: 16px;
+            strong{
+                color:#FF706C;
+            }
+        }
+    }
 }
 
-.sidebar .Label li {
-    margin: 0; display: inline-block;
-    padding: 2px 5px;
+.tags-list{
+    ul{
+        li{
+            display: inline-block;margin: 0; padding: 2px 5px;
+            a{display: block;
+                float: left;
+                padding: 2px 10px;
+                line-height: 1;
+                background: #353E49;
+                color: hsla(0,0%,100%,.5);
+                border-radius: 1px;font-weight: 300;
+                color: #9c9c9c;
+                line-height: 24px;
+                font-size: 14px;}
+        }
+    }
 }
 
 a.read-more {
@@ -3591,7 +3621,7 @@ body.error_page {
         width: 296px;
         z-index: 10;
         overflow-y: auto;
-        max-height: 100%
+        max-height: 100%;  -webkit-overflow-scrolling: touch;
     }
     #rsidebar-wrapper img {
         max-width: 100%;
@@ -3608,12 +3638,17 @@ body.error_page {
     .show {
         display: block!important;
     }
-    #rsidebar-wrapper.rsidebar_leave {
-        display: none;
+    #rsidebar-wrapper.sidebar_leave {
+        // display: none;
+        transform: translateX(-100%);will-change:transform;
+        transition:transform 0.45s ease-in-out;
     } 
-    #rsidebar-wrapper.rsidebar_enter {
-        display: block;
-    } 
+    #rsidebar-wrapper.sidebar_enter {
+        display: block;will-change:transform;
+        transform: translateX(0);
+        transition:transform 0.45s ease-in-out;
+    }
+    
 }
 
 

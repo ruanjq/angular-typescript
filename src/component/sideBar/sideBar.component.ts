@@ -1,13 +1,13 @@
 
 import { Component,OnInit   } from '@angular/core';
 
-import { CategoryService } from '../../js/modules/category.service';
+import { CategoryService } from '../../js/leancloudService/category.service';
 import { Category } from '../../js/modules/category';
-
+import { TagsService } from '../../js/leancloudService/tags.service';
 @Component({
 	selector:'side-bar',
 	templateUrl:'./sideBar.component.html',
-	providers:[CategoryService]
+	providers:[CategoryService,TagsService]
 })
 
 export class SideBarComponent implements OnInit   {
@@ -15,11 +15,11 @@ export class SideBarComponent implements OnInit   {
 	isShowSide:boolean = false;
 
 	// 类目
-	categorys:Category[];
+	categorys:any[];
 
+	tagsList:any[];
 
-
-	constructor(public categoryService:CategoryService){
+	constructor(public categoryService:CategoryService,private tagsService:TagsService){
 
 	}
 
@@ -28,17 +28,24 @@ export class SideBarComponent implements OnInit   {
 
 	ngOnInit() {
 
-		this.getData();
-		
+		this.getCategoryData();
+		this.getTagsData();
 	}
 
 	showSide() {
 		this.isShowSide = !this.isShowSide;
 	}
 
-	getData(){
-		this.categoryService.getCategory().then( res => {
-			this.categorys = res.data;
+	getCategoryData(){
+		this.categoryService.getAllList().then( res => {
+			this.categorys = res;
+		});
+	}
+
+	// 获取标签数据
+	getTagsData(){
+		this.tagsService.getAllList().then( res => {
+			this.tagsList = res;
 		});
 	}
 

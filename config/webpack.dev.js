@@ -22,7 +22,8 @@ module.exports = webpackMerge(commonConfig, {
         }),
         new ExtractTextPlugin('css/[name].css'),
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: 'src/index.html',
+            favicon:'./favicon.ico'
         })
     ],
 

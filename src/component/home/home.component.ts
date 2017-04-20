@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit(){
-		this.blogsService.getAllList().then( (data:any) => {
-			console.log(data);
-			this.blogList = data;
+		this.blogsService.getPageList(1).then( (res:any) => {
+			console.log(res);
+			this.blogList = res.data;
 		},err => {
 
 		})
