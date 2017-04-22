@@ -2,6 +2,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { RouterModule,Routes} from '@angular/router';
 
@@ -30,7 +31,10 @@ import { DateFormatPipe } from '../js/modules/dateFormat.pipe';
  */
 const routerConfig:Routes = [
 	{path:'home',component:HomeComponent},
-	{path:'blogs-list',component:BlogsListComponent},
+	{path:'blogs-list/:page_index',component:HomeComponent},
+	{path:'blogs-category/:category_id',component:HomeComponent},
+	{path:'blogs-tags/:tags',component:HomeComponent},
+	{path:'blogs-search/:keywords',component:HomeComponent},
 	{path:'about',component:AboutComponent},
 	{path:'blogs-read/:blog_id',component:DetailsComponent},
 	{path:'resume',component:ResumeComponent},
@@ -42,6 +46,7 @@ const routerConfig:Routes = [
 	imports:[
 		BrowserModule,
 		HttpModule,
+		FormsModule,
 		RouterModule.forRoot(routerConfig,{ useHash: true })
 	],
 	declarations:[

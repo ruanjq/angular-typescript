@@ -164,7 +164,7 @@ mark {
     box-sizing: border-box;
     color: #333;
     display: inline-block;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     font-size: 13px;
     height: 24px;
     margin: 0;
@@ -181,7 +181,7 @@ mark {
     box-sizing: border-box;
     color: #333;
     display: inline-block;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     font-size: 13px;
     margin: 0;
     margin-top: 5px;
@@ -233,7 +233,7 @@ mark {
     color: #444;
     cursor: default;
     display: inline-block;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     font-size: 11px;
     font-weight: bold;
     height: 24px;
@@ -485,13 +485,13 @@ div.gsc-control {
 }
 
 .FollowByEmail .follow-by-email-inner input {
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
 }
 
 .FollowByEmail .follow-by-email-inner::-webkit-input-placeholder,
 .FollowByEmail .follow-by-email-inner input:-moz-placeholder {
     font-size: 13px;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     color: #999
 }
 
@@ -1147,7 +1147,7 @@ a.feed-reader-link {
     color: #444;
     border: 1px solid #dcdcdc;
     padding: 6px;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
 }
 
 div.floatingPlayer_ytvb div.playerInnerBox_ytvb .player_ytvb {
@@ -1165,7 +1165,7 @@ div.floatingPlayer_ytvb div.playerInnerBox_ytvb .player_ytvb {
 .videoBar-container {
     margin: auto;
     text-transform: none;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     letter-spacing: normal;
     word-spacing: normal;
     clear: both
@@ -1302,7 +1302,7 @@ div.floatingPlayer_ytvb div.playerInnerBox_ytvb .player_ytvb {
 
 #ArchiveList .toggle {
     cursor: pointer;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
 }
 
 #ArchiveList .toggle-open {
@@ -1901,7 +1901,7 @@ a:active.sb-pinterest {
     margin: 2px;
     border: 0;
     padding: 0;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     color: #000;
     text-decoration: none;
     list-style: none;
@@ -2000,7 +2000,7 @@ a:active.sb-pinterest {
     border-bottom-right-radius: 2px 2px;
     border-radius: 3px;
     -webkit-border-radius: 3px;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     font-size: 18px;
     color: #666
 }
@@ -2191,7 +2191,7 @@ body#layout ul li {
 }
 
 body {
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     font-size: 16px;
     font-weight: 300;
     position: relative;
@@ -2264,7 +2264,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
     text-transform: uppercase;
 }
 
@@ -2814,6 +2814,7 @@ td.gsc-search-button {
     li{
         margin: 0; 
         padding: 12px 5px;border-bottom:1px solid rgba(255,255,255,.1);
+        &:hover{text-decoration: underline;cursor: pointer;}
         a{
             line-height: 24px;
             font-size: 16px;
@@ -2828,6 +2829,9 @@ td.gsc-search-button {
     ul{
         li{
             display: inline-block;margin: 0; padding: 2px 5px;
+            &:hover{
+                opacity: 0.8; cursor: pointer;
+            }
             a{display: block;
                 float: left;
                 padding: 2px 10px;
@@ -3082,7 +3086,7 @@ img.comment_emo {
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 23px;
-    font-family:  '微软雅黑';
+    font-family:  'Microsoft YaHei';
 }
 
 .comment_name a:hover {
@@ -3460,19 +3464,34 @@ iframe {
 }
 
 .showpageArea {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     float: right;
     width: 100%;
-    text-align: right;
-    padding: 20px 20px 20px 20px;
+    text-align: center;
+    padding: 20px 0;
+    display: inline-block;
+    vertical-align: top;
+    .pageCtrl{
+        float: right;text-align: right;
+        .showpage{
+            cursor: pointer;
+            text-decoration: underline;
+            display: inline-block;
+            margin-left: 8px;
+            &:hover{opacity: 0.8;}
+            &.disabled{
+                opacity: 0.45;
+            }
+        }
+    }
 }
 
 #blog-pager .showpageArea span a {
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 500;
     color: #111;
-    text-decoration: none;
+    
 }
 
 .showpagePoint {
@@ -3480,7 +3499,6 @@ iframe {
 }
 
 .showpageArea span {
-    margin: 0 8px;
 }
 
 .static_page .post h1 a {

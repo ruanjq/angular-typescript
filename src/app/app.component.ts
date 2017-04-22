@@ -21,6 +21,10 @@ export class AppComponent implements OnInit {
             if (!(evt instanceof NavigationEnd)) {
                 return;
             }
+            // NavigationEnd
+            // NavigationCancel
+            // NavigationError
+            // RoutesRecognized
             window.scrollTo(0, 0)
         });
     }

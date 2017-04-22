@@ -16,7 +16,9 @@ import { BlogsService } from '../../js/leancloudService/blog.service';
 export class DetailsComponent implements OnInit, OnDestroy {
 
     blogs_id: string;
-    public blogInfo: Blog;
+    public blogInfo = {
+        blog_title:''
+    };
     private sub: any;
     constructor(private router: ActivatedRoute, private blogsService: BlogsService) {
         // console.log(this.router.params);

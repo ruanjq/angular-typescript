@@ -4,7 +4,7 @@
             <div id="header-inner">
                 <div class="titlewrapper">
                     <h1 class="title">
-                        <a href="http://isimpletheme.blogspot.hk/">风之家</a>
+                        <a href="http://www.windhome.win">风之家</a>
                     </h1>
                 </div>
                 <div class="descriptionwrapper">
@@ -15,12 +15,12 @@
         <div class="widget BlogSearch" data-version="1" id="BlogSearch1">
             <div class="widget-content">
                 <div id="BlogSearch1_form">
-                    <form action="http://isimpletheme.blogspot.hk/search" class="gsc-search-box">
+                    <form (ngSubmit)="searchBlog()" class="gsc-search-box">
                         <table cellpadding="0" cellspacing="0" class="gsc-search-box">
                             <tbody>
                                 <tr>
                                     <td class="gsc-input">
-                                        <input autocomplete="off" class="gsc-input" name="q" placeholder="关键词" size="10" title="search" type="text" value="">
+                                        <input autocomplete="off" class="gsc-input"  [(ngModel)]="search.keywords" name="keywords"  placeholder="关键词" title="search" type="text" >
                                         <input class="gsc-search-button" title="search" type="submit" value="">
                                     </td>
                                 </tr>
@@ -65,7 +65,7 @@
             <h2 style="letter-spacing: 2px;">标签</h2>
             <div class="widget-content list-label-widget-content tags-list">
                 <ul>
-                    <li *ngFor="let item of tagsList">
+                    <li title="{{item?.tags_name}}" *ngFor="let item of tagsList" (click)="blogTags(item?.tags_name)">
                         <a dir="ltr">{{item?.tags_name}}</a>
                     </li>
                     
@@ -88,8 +88,8 @@
             <h2 style="letter-spacing: 2px;">博客分类</h2>
             <div class="widget-content list-label-widget-content">
                 <ul class="categorys-list">
-                    <li *ngFor="let item of categorys">
-                        <a dir="ltr">{{item?.category_title}}</a>
+                    <li title="{{item?.category_title}}" *ngFor="let item of categorys" (click)="blogCategory(item?.category_id)">
+                        <a dir="ltr">{{item?.category_title}} <strong>({{item?.total}})</strong></a>
                     </li>
                     
                 </ul>
@@ -122,6 +122,6 @@
     </div>
 </div>
 <div class="mobile-header" [ngClass]="{'backdrop_enter':isShowSide,'backdrop_leave':!isShowSide}">
-    <div class="site-name"><a href="http://isimpletheme.blogspot.hk/">风之家</a></div>
+    <div class="site-name"><a href="http://www.windhome.win">风之家</a></div>
     <div class="menu-btn" (click)="showSide()"><i aria-hidden="true" class="fa fa-bars"></i></div>
 </div>

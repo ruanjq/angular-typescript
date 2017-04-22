@@ -24,8 +24,8 @@ export class BlogsService {
      * [getAllList description]
      * @return {Promise<Blog[]>} [description]
      */
-    private getAllList(sql:string): Promise < Blog[] > {
-        
+    private queryList(sql: string): Promise < Blog[] > {
+
         return new Promise((resolve, reject) => {
 
             this.AV.Query.doCloudQuery(sql).then((res: any) => {
@@ -48,21 +48,21 @@ export class BlogsService {
     }
 
 
-    public getPageList(pageIndex:number): Promise < any > {
-        return new Promise((resolve,reject) => {
+    public getPageList(pageIndex: number): Promise < any > {
+        return new Promise((resolve, reject) => {
             this.getDataTotal().then(total => {
-                let pageTotal = this.calcPageCount(total,this.pageSize);
+                let pageTotal = this.calcPageCount(total, this.pageSize);
                 let sql = `select * from ${this.table_name} limit ${this.pageSize * (pageIndex - 1)},${this.pageSize * pageIndex}`;
                 console.log("分页查询语句" + sql);
-                this.getAllList(sql).then( data => {
+                this.queryList(sql).then(data => {
                     resolve({
-                        pageIndex:pageIndex,
-                        pageCount:pageTotal,
-                        total:total,
-                        data:data
+                        pageIndex: pageIndex,
+                        pageCount: pageTotal,
+                        total: total,
+                        data: data
                     });
                 });
-            }).catch( (err:any) => {
+            }).catch((err: any) => {
                 reject(err);
             });
         });
@@ -83,6 +83,33 @@ export class BlogsService {
             })
         });
     }
+
+    /**
+     * [ 获取所有博客分类总数 ]
+     */
+    public groupDataByBlogCategory() {
+        let sql = `select blog_category from ${this.table_name}`;
+        let result = {};
+        return new Promise((resolve, reject) => {
+            this.AV.Query.doCloudQuery(sql).then((res: any) => {
+                for (let item of res.results) {
+                    item = item.attributes;
+                    if (!result[item.blog_category]) {
+                        result[item.blog_category] = [];
+                        result[item.blog_category].push(item);
+                    } else {
+                        result[item.blog_category].push(item);
+                    }
+                }
+                resolve(result);
+            }).catch((err: any) => {
+                reject(err);
+            })
+        });
+
+    }
+
+
 
     /**
      * [ 计算总页数 ]
@@ -124,6 +151,33 @@ export class BlogsService {
         });
     }
 
+    /**
+     * [ 按分类查询博客列表 ]
+     * @param {number} category_id [description]
+     */
+    getBlogByCategoryId(category_id:number){
+        let sql = `select * from ${this.table_name} where blog_category='${category_id}'`;
+        return this.queryList(sql);
+    }
+
+    /**
+     * [ 按标签查询博客列表 ]
+     * @param {tag} category_id [description]
+     */
+    getBlogByTag(tag:string){
+        let sql = `select * from ${this.table_name} where blog_tags like '%${tag}%'`;
+        return this.queryList(sql);
+    }
 
 
+    /**
+     * [ 按标签查询博客列表 ]
+     * @param {tag} category_id [description]
+     */
+    getBlogBySearch(keywords:string){
+        let sql = `select * from ${this.table_name} where blog_title like '%${keywords}%'`;
+        return this.queryList(sql);
+    }
+
+   
 }
