@@ -4,10 +4,11 @@ import { CategoryService } from '../../js/leancloudService/category.service';
 import { Category } from '../../js/modules/category';
 import { BlogsService } from '../../js/leancloudService/blog.service';
 import { TagsService } from '../../js/leancloudService/tags.service';
+
 @Component({
     selector: 'side-bar',
     templateUrl: './sideBar.component.html',
-    providers: [CategoryService, TagsService,BlogsService]
+    providers: [CategoryService,BlogsService,TagsService]
 })
 
 export class SideBarComponent implements OnInit {
@@ -19,11 +20,12 @@ export class SideBarComponent implements OnInit {
 
     tagsList: any[];
 
+
     public search = {
         keywords:''
     };
 
-    constructor(public categoryService: CategoryService, private tagsService: TagsService,private blogsService:BlogsService,
+    constructor(public categoryService: CategoryService, public tagsService: TagsService,private blogsService:BlogsService,
             private router: Router) {
 
     }
@@ -43,7 +45,7 @@ export class SideBarComponent implements OnInit {
     }   
 
     searchBlog(){
-        console.log(this.search.keywords);
+        this.isShowSide = false;
         this.router.navigate(['/blogs-search', this.search.keywords]);
         // console.log("submit 提交数据");
     }

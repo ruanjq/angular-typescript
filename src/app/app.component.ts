@@ -1,7 +1,6 @@
 import { Router, NavigationEnd } from '@angular/router';	
 
 import { Component,OnInit  } from '@angular/core';
-
 import '../styles/less/styles';
 
 @Component({

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BlogsService } from '../../js/leancloudService/blog.service';
+import { TagsService } from '../../js/leancloudService/tags.service';
 
 @Component({
     selector: 'home-page',
     templateUrl: './home.component.html',
-    providers: [BlogsService]
+    providers: [BlogsService,TagsService]
 })
 
 export class HomeComponent implements OnInit {
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
     	data:[]
     };
     pageIndex:number = 1;
-    constructor(private blogsService: BlogsService,private route: ActivatedRoute,private router: Router) {
+    constructor(private blogsService: BlogsService,private route: ActivatedRoute,private router: Router,public tagsService:TagsService) {
 
     }
 
@@ -28,8 +29,9 @@ export class HomeComponent implements OnInit {
                 // console.log("分类查询");
                 this.getCategoryData(parseInt(params['category_id']));
             }else if(params['tags']){
-                console.log("获取标签数据");
+                // console.log("获取标签数据");
                 this.getTagData(params['tags']);
+                this.tagsService.currentTags = params['tags'];
             } else if(params['keywords']){
                 this.getSearchData(params['keywords']);
             }else{

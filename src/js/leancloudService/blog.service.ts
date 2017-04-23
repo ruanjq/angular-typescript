@@ -127,13 +127,13 @@ export class BlogsService {
     /**
      * [getBlogById description]
      * @param  {number}  blog_id [description]
-     * @return {Promise<Blog>}         [description]
+     * @return {Promise<any>}         [description]
      */
-    getBlogById(blog_id: number): Promise < Blog > {
+    getBlogById(blog_id: number): Promise < any > {
         let sql = `select * from ${this.table_name} where blog_id=${blog_id}`;
         return new Promise((resolve, reject) => {
             this.AV.Query.doCloudQuery(sql).then((res: any) => {
-                let resultObj: Blog;
+                let resultObj:any;
                 if (res.results instanceof Array) {
                     for (let item of res.results) {
                         let i_attr = item.attributes;
@@ -142,8 +142,11 @@ export class BlogsService {
                             i_attr.blog_big_thumbnail, i_attr.blog_thumbnail,
                             i_attr.blog_read_count, item.createdAt, i_attr.blog_summary);
                         resultObj = blog;
+                        resultObj.objectId = item.id;
                     }
                 }
+                // 阅读数量+1
+                this.updateReadCount(resultObj.objectId,resultObj.blog_read_count++);
                 resolve(resultObj);
             }, (err: any) => {
                 reject(err);
@@ -176,6 +179,12 @@ export class BlogsService {
      */
     getBlogBySearch(keywords:string){
         let sql = `select * from ${this.table_name} where blog_title like '%${keywords}%'`;
+        return this.queryList(sql);
+    }
+
+
+    updateReadCount(objectId:string,blog_read_count:number){
+        let sql = `update ${this.table_name} set blog_read_count=${blog_read_count} where objectId='${objectId}'`;
         return this.queryList(sql);
     }
 

@@ -62,11 +62,11 @@
     <div class="sidebar section" id="sidebarright">
         
         <div class="widget Label" data-version="1" id="Label1">
-            <h2 style="letter-spacing: 2px;">标签</h2>
+            <h2 style="letter-spacing: 2px;">标签{{tagsService.currentTags}}</h2>
             <div class="widget-content list-label-widget-content tags-list">
                 <ul>
                     <li title="{{item?.tags_name}}" *ngFor="let item of tagsList" (click)="blogTags(item?.tags_name)">
-                        <a dir="ltr">{{item?.tags_name}}</a>
+                        <a dir="ltr" [ngClass]="{'activated':item?.tags_name == tagsService.currentTags}">{{item?.tags_name}}</a>
                     </li>
                     
                 </ul>
