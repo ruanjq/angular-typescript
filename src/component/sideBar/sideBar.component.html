@@ -4,7 +4,7 @@
             <div id="header-inner">
                 <div class="titlewrapper">
                     <h1 class="title">
-                        <a href="http://www.windhome.win">风之家</a>
+                        <a routerLink="/home">风之家</a>
                     </h1>
                 </div>
                 <div class="descriptionwrapper">
@@ -43,7 +43,7 @@
             <h2>Menu</h2>
             <div class="widget-content">
                 <ul>
-                    <li><a href="#">风之家</a></li>
+                    <li><a routerLink="/home">风之家</a></li>
                     <li><a href="#">关于我</a></li>
                     <li><a href="#">联系我</a></li>
                 </ul>
@@ -62,11 +62,11 @@
     <div class="sidebar section" id="sidebarright">
         
         <div class="widget Label" data-version="1" id="Label1">
-            <h2 style="letter-spacing: 2px;">标签{{tagsService.currentTags}}</h2>
+            <h2 style="letter-spacing: 2px;">标签</h2>
             <div class="widget-content list-label-widget-content tags-list">
                 <ul>
                     <li title="{{item?.tags_name}}" *ngFor="let item of tagsList" (click)="blogTags(item?.tags_name)">
-                        <a dir="ltr" [ngClass]="{'activated':item?.tags_name == tagsService.currentTags}">{{item?.tags_name}}</a>
+                        <a [ngClass]="{'activated':item?.tags_name == currentClass}">{{item?.tags_name}}</a>
                     </li>
                     
                 </ul>
@@ -89,7 +89,7 @@
             <div class="widget-content list-label-widget-content">
                 <ul class="categorys-list">
                     <li title="{{item?.category_title}}" *ngFor="let item of categorys" (click)="blogCategory(item?.category_id)">
-                        <a dir="ltr">{{item?.category_title}} <strong>({{item?.total}})</strong></a>
+                        <a [ngClass]="{'activated':item?.category_id == currentClass}">{{item?.category_title}} <strong>({{item?.total}})</strong></a>
                     </li>
                     
                 </ul>
@@ -122,6 +122,6 @@
     </div>
 </div>
 <div class="mobile-header" [ngClass]="{'backdrop_enter':isShowSide,'backdrop_leave':!isShowSide}">
-    <div class="site-name"><a href="http://www.windhome.win">风之家</a></div>
+    <div class="site-name"><a routerLink="/home">风之家</a></div>
     <div class="menu-btn" (click)="showSide()"><i aria-hidden="true" class="fa fa-bars"></i></div>
 </div>

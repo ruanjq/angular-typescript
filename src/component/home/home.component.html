@@ -4,7 +4,7 @@
         <div class="widget Profile" data-version="1" id="Profile1">
             <div class="widget-content">
                 <a href="https://github.com/ruanjq" target="_blank">
-                    <img alt="My photo" class="profile-img" height="71" src="../../images/avatar.jpg" width="80">
+                    <div alt="My photo" class="profile-img avatar"></div>
                 </a>
                 <dl class="profile-datablock">
                     <dt class="profile-data">
@@ -119,7 +119,7 @@
                             
                                             <div class="post-thumb">
                                                 <a [routerLink]="['/blogs-read', item.blog_id]">
-                                                    <img [src]="item.blog_thumbnail">
+                                                    <img lazy="{{item.blog_thumbnail}}">
                                                 </a>
                                             </div>
                             

@@ -4,7 +4,7 @@ import { CategoryService } from '../../js/leancloudService/category.service';
 import { Category } from '../../js/modules/category';
 import { BlogsService } from '../../js/leancloudService/blog.service';
 import { TagsService } from '../../js/leancloudService/tags.service';
-
+import { CommonService } from '../../js/modules/commonService';
 @Component({
     selector: 'side-bar',
     templateUrl: './sideBar.component.html',
@@ -20,13 +20,19 @@ export class SideBarComponent implements OnInit {
 
     tagsList: any[];
 
+    currentClass:string = "";
+
+
 
     public search = {
         keywords:''
     };
 
     constructor(public categoryService: CategoryService, public tagsService: TagsService,private blogsService:BlogsService,
-            private router: Router) {
+            private router: Router,private commonService:CommonService) {
+        this.commonService.currentClass$.subscribe(data => {
+            this.currentClass = data;
+        });
 
     }
 

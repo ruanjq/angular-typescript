@@ -654,7 +654,6 @@ div.clear {
 
 .profile-img {
     float: left;
-    margin: 0 5px 5px
 }
 
 .profile-data {
@@ -2599,11 +2598,38 @@ tt {
     margin: 3px 0px 10px 0px;
 }
 
-.main-top .Profile img {
+.main-top .Profile .avatar  {
     float: right;
     border-radius: 50%;
     width: 77px;
     height: 77px;
+    background: #FFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: -5px 10px 28px -3px rgba(51, 51, 51, 0.68) inset;
+    &:after{
+        content: '';
+        position: absolute; width: 100%; height: 100%;border-radius: 50%;
+        background: url('../../images/github.png') no-repeat,#FFF;display: block;
+        background-size: 77px; background-position: 0 6px;
+        transform: translateX(100%);
+        transition: transform 0.3s linear 0.2s;
+    } 
+    &:before{
+        content: '';
+        position: absolute; width: 100%; height: 100%;border-radius: 50%;
+        background: url('../../images/avatar.jpg') no-repeat;display: block;
+        background-size: 77px;
+        transition: transform 0.4s linear;
+    }
+    &:hover{
+        &:after{
+            transform: translateX(0%);
+        }
+        &:before{
+            transform: rotateY(60deg) translateX(-2px);
+        }
+    }
 }
 
 .main-top .Profile a.profile-link {
@@ -2703,7 +2729,7 @@ h2.date-header {
     display: block;
     width: 100%;
     overflow: hidden;
-    height: 355px;
+    height: 355px; background: #DDD;
 }
 
 .post-thumb img:hover {
@@ -2736,7 +2762,9 @@ h2.date-header {
     width: 100%;
     font-weight: normal;border-bottom:1px solid #ddd;
 }
-
+.post-outer:last-child{
+    border-bottom: none;
+}
 .postmeta-primary a {
     color: #a3a3a3;
     text-decoration: none;
@@ -2814,7 +2842,11 @@ td.gsc-search-button {
     li{
         margin: 0; 
         padding: 12px 5px;border-bottom:1px solid rgba(255,255,255,.1);
-        &:hover{text-decoration: underline;cursor: pointer;}
+        transition: transform 0.2s linear;
+        &:hover{text-decoration: underline;cursor: pointer;
+            transform: translateX(5px);
+            a{color:#FFF;}
+        }
         a{
             line-height: 24px;
             font-size: 16px;

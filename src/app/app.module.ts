@@ -9,7 +9,7 @@ import { RouterModule,Routes} from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { Variable } from '../js/modules/constConfig';
-
+import { CommonService } from '../js/modules/commonService';
 
 // 自定义组件
 import { AppComponent } from './app.component';
@@ -23,6 +23,9 @@ import { SideBarComponent } from '../component/sideBar/sideBar.component';
 // 自定义管道
 import { DateFormatPipe } from '../js/modules/dateFormat.pipe';
 
+
+// 自定义指令
+import { LazyDirective } from '../js/modules/lazy.directive';
 
 
 /**
@@ -55,9 +58,9 @@ const routerConfig:Routes = [
 		DetailsComponent,
 		BlogsListComponent,
 		ResumeComponent,
-		AboutComponent,SideBarComponent,DateFormatPipe
+		AboutComponent,SideBarComponent,DateFormatPipe,LazyDirective
 	],
-	providers:[Variable],
+	providers:[Variable,CommonService],
 	bootstrap: [ AppComponent ]
 })
 

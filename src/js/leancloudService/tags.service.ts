@@ -1,5 +1,6 @@
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class TagsService {
 
 
@@ -10,7 +11,6 @@ export class TagsService {
 
     private blogsObject: any;
 
-    public currentTags:string = "abc";
 
     constructor() {
         this.blogsObject = this.AV.Object.extend(this.table_name);

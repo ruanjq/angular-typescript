@@ -1,6 +1,9 @@
+import { Injectable } from '@angular/core';
 import { Blog } from './blog.entity';
 
 
+
+@Injectable()
 export class BlogsService {
 
 
@@ -52,7 +55,7 @@ export class BlogsService {
         return new Promise((resolve, reject) => {
             this.getDataTotal().then(total => {
                 let pageTotal = this.calcPageCount(total, this.pageSize);
-                let sql = `select * from ${this.table_name} limit ${this.pageSize * (pageIndex - 1)},${this.pageSize * pageIndex}`;
+                let sql = `select * from ${this.table_name} limit ${this.pageSize * (pageIndex - 1)},${this.pageSize}`;
                 console.log("分页查询语句" + sql);
                 this.queryList(sql).then(data => {
                     resolve({
@@ -146,7 +149,7 @@ export class BlogsService {
                     }
                 }
                 // 阅读数量+1
-                this.updateReadCount(resultObj.objectId,resultObj.blog_read_count++);
+                this.updateReadCount(resultObj.objectId,resultObj.blog_read_count+=1);
                 resolve(resultObj);
             }, (err: any) => {
                 reject(err);
