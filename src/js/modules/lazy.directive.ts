@@ -18,7 +18,7 @@ export class LazyDirective implements OnInit {
     private windowHeight:number = 0;;
     constructor(private el: ElementRef, @Inject(DOCUMENT) private document: Document) {
         this.windowHeight = document.documentElement.clientHeight;
-        console.log("浏览器高度",this.windowHeight);
+
     }
 
 
@@ -34,7 +34,6 @@ export class LazyDirective implements OnInit {
 
     private lazy(){
     	if(this.isLazy(this.el.nativeElement.src,this.lazySrc) && this.isWindowArea(this.el.nativeElement)){
-       		console.log('开始加载');
        		this.el.nativeElement.src = this.lazySrc;
         }
     }
