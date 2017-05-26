@@ -1,41 +1,41 @@
 <!--效果html开始-->
 <div id="player">
-    <div class="cover"><img id="cover" src="../../images/1.jpg" alt="魔兽世界 - 亡灵序曲.mp3"></div>
+    <div class="cover"><img id="cover" [src]="currentAudio.images" alt=""></div>
     <div class="ctrl">
         <!-- <div class="tag"><strong>亡灵序曲</strong><span class="artist">魔兽世界</span><span class="album">魔兽世界 - 亡灵序曲.mp3</span></div> -->
         <div class="control">
             
             <div class="left">
-                <div class="rewind icon" id="previous"></div>
-                <div class="playback icon" id="playerCtrl"></div>
-                <div class="fastforward icon" id="previous"></div>
+                <div class="rewind icon" id="previous" (click)="previous()"></div>
+                <div class="playback icon" [ngClass]="{'playing':isPlayer == true}" id="playerCtrl" (click)="player()"></div>
+                <div class="fastforward icon" id="next" (click)="next()"></div>
             </div>
             <div class="volume right">
-                <div class="mute icon left" id="mute"></div>
+                <div class="mute icon left" [ngClass]="{'enable':isMute == true}" (click)="mute()" id="mute"></div>
                 <div class="slider left ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider-volume">
-                    <div class="pace" id="pace-volume"></div>
-                    <div class="ui-slider-handle ui-state-default ui-corner-all" id="slider-handle-volume" style="left: 0;"></div>
+                    <div class="pace" id="pace-volume" #paceVolume></div>
+                    <div class="ui-slider-handle ui-state-default ui-corner-all" id="slider-handle-volume" #sliderHandleVolume style="left: 0;"></div>
                 </div>
             </div>
         </div>
         <div class="progress">
             <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider-time">
                 <div class="loaded" style="width: 100%;"></div>
-                <div class="pace" id="pace-time"></div>
-                <div class="ui-slider-handle ui-state-default ui-corner-all" id="slider-handle-time"></div>
+                <div class="pace" id="pace-time" #paceTime></div>
+                <div class="ui-slider-handle ui-state-default ui-corner-all" id="slider-handle-time" #sliderHandleTime></div>
             </div>
-            <div class="timer left" id="timer">00:00</div>
+            <div class="timer left" id="timer">{{time}}</div>
             <div class="right">
                 <div class="repeat icon"></div>
                 <div class="shuffle icon"></div>
             </div>
         </div>
     </div>
-    <audio id="audioMp3">
+    <audio  #audioMp3>
         <source [src]="currentAudio.src">
     </audio>
 </div>
 <ul id="playlist">
-    <li class="" [ngClass]="{'playing':item?.id == currentAudio.id}" *ngFor="let item of audioList" title="{{item?.name}}" (click)="player(item)">{{item?.name}}</li>
+    <li class="" [ngClass]="{'playing':item?.id == currentAudio.id}" *ngFor="let item of audioList" title="{{item?.name}}" (click)="setPlayer(item)">{{item?.name}}</li>
     
 </ul>
