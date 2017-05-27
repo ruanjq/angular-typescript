@@ -56,7 +56,7 @@ export class BlogsService {
             this.getDataTotal().then(total => {
                 let pageTotal = this.calcPageCount(total, this.pageSize);
                 let sql = `select * from ${this.table_name} limit ${this.pageSize * (pageIndex - 1)},${this.pageSize}`;
-                console.log("分页查询语句" + sql);
+                // console.log("分页查询语句" + sql);
                 this.queryList(sql).then(data => {
                     resolve({
                         pageIndex: pageIndex,

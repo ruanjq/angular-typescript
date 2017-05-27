@@ -20,6 +20,7 @@ import { ResumeComponent } from '../component/resume/resume.component';
 import { AboutComponent } from '../component/about/about.component';
 import { SideBarComponent } from '../component/sideBar/sideBar.component';
 import { PlayerComponent } from '../component/player/player.component';
+import { PhotosComponent } from '../component/photos/photos.component';
 // 自定义管道
 import { DateFormatPipe } from '../js/modules/dateFormat.pipe';
 
@@ -41,6 +42,7 @@ const routerConfig:Routes = [
 	{path:'about',component:AboutComponent},
 	{path:'blogs-read/:blog_id',component:DetailsComponent},
 	{path:'resume',component:ResumeComponent},
+	{path:'photos',component:PhotosComponent},
 	{path:'',redirectTo:'/home',pathMatch:'full'}
 ]
 
@@ -59,6 +61,7 @@ const routerConfig:Routes = [
 		BlogsListComponent,
 		ResumeComponent,
 		PlayerComponent,
+		PhotosComponent,
 		AboutComponent,SideBarComponent,DateFormatPipe,LazyDirective
 	],
 	providers:[Variable,CommonService],
