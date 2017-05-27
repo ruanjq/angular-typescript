@@ -6,23 +6,23 @@
         <div class="control">
             
             <div class="left">
-                <div class="rewind icon" id="previous" (click)="previous()"></div>
-                <div class="playback icon" [ngClass]="{'playing':isPlayer == true}" id="playerCtrl" (click)="player()"></div>
-                <div class="fastforward icon" id="next" (click)="next()"></div>
+                <div class="rewind icon" title="上一曲" id="previous" (click)="previous()"></div>
+                <div class="playback icon" title="暂停/播放" [ngClass]="{'playing':isPlayer == true}" id="playerCtrl" (click)="player()"></div>
+                <div class="fastforward icon" title="下一曲" id="next" (click)="next()"></div>
             </div>
             <div class="volume right">
-                <div class="mute icon left" [ngClass]="{'enable':isMute == true}" (click)="mute()" id="mute"></div>
-                <div class="slider left ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider-volume">
-                    <div class="pace" id="pace-volume" #paceVolume></div>
-                    <div class="ui-slider-handle ui-state-default ui-corner-all" id="slider-handle-volume" #sliderHandleVolume style="left: 0;"></div>
+                <div class="mute icon left" title="静音" [ngClass]="{'enable':isMute == true}" (click)="mute()" id="mute"></div>
+                <div class="slider left ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" #sliderVolume id="slider-volume">
+                    <div class="pace" [ngStyle]="{'width':volumeWidth}" id="pace-volume" #paceVolume></div>
+                    <div class="ui-slider-handle ui-state-default ui-corner-all" (mousedown)="volumemousedown($event)" [ngStyle]="{'left':volumeWidth}" id="slider-handle-volume" #sliderHandleVolume ></div>
                 </div>
             </div>
         </div>
         <div class="progress">
-            <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider-time">
-                <div class="loaded" style="width: 100%;"></div>
-                <div class="pace" id="pace-time" #paceTime></div>
-                <div class="ui-slider-handle ui-state-default ui-corner-all" id="slider-handle-time" #sliderHandleTime></div>
+            <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" #sliderTime id="slider-time">
+                <div class="loaded" [ngStyle]="{'width':loaded}"></div>
+                <div class="pace" [ngStyle]="{'width':timeWidth}" id="pace-time" #paceTime></div>
+                <div class="ui-slider-handle ui-state-default ui-corner-all" (mousedown)="timemousedown($event)" [ngStyle]="{'left':timeWidth}"  id="slider-handle-time" #sliderHandleTime></div>
             </div>
             <div class="timer left" id="timer">{{time}}</div>
             <div class="right">
@@ -36,6 +36,10 @@
     </audio>
 </div>
 <ul id="playlist">
-    <li class="" [ngClass]="{'playing':item?.id == currentAudio.id}" *ngFor="let item of audioList" title="{{item?.name}}" (click)="setPlayer(item)">{{item?.name}}</li>
+    <li class="" [ngClass]="{'playing':item?.id == currentAudio.id}" *ngFor="let item of audioList" title="{{item?.name}}" (click)="setPlayer(item)">
+        <div class="inner">
+            <span>{{item?.name}}</span>
+        </div>
+    </li>
     
 </ul>
