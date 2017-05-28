@@ -10,19 +10,24 @@ export class PlayerComponent implements AfterViewInit {
 
     private audioList: Array < any > = [{
         id: 0,
-        name: "德国 - 德国第一装甲师进行曲",
-        images: 'http://www.windhome.win/src/images/1.jpg',
-        src: "http://www.windhome.win/src/source/chenparty dj.mp3"
+        name: "Flower Dance",
+        images: 'http://www.windhome.win/src/images/Flower Dance.jpg',
+        src: "http://www.windhome.win/src/source/Flower Dance.mp3"
     }, {
         id: 1,
-        name: "魔兽世界 - 亡灵序曲",
-        images: 'http://www.windhome.win/src/images/2.jpg',
-        src: "http://www.windhome.win/src/source/i1.mp3"
+        name: "Illusionary Daytime",
+        images: 'http://www.windhome.win/src/images/Illusionary Daytime.jpg',
+        src: "http://www.windhome.win/src/source/Illusionary Daytime.mp3"
     }, {
         id: 2,
-        name: "德国童声 - chenparty dj",
-        images: 'http://www.windhome.win/src/images/3.jpg',
-        src: "http://www.windhome.win/src/source/The Dawn.mp3"
+        name: "Luv Letter",
+        images: 'http://www.windhome.win/src/images/Luv Letter.jpg',
+        src: "http://www.windhome.win/src/source/Luv Letter.mp3"
+    },{
+        id: 3,
+        name: "夜的钢琴曲五",
+        images: 'http://www.windhome.win/src/images/夜的钢琴曲五.jpg',
+        src: "http://www.windhome.win/src/source/夜的钢琴曲五.mp3"
     }];
 
     private currentAudio = this.audioList[0];
