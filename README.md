@@ -7,7 +7,7 @@
 ## [风之家](http://www.windhome.win "风之家博客")  
 
 
-![项目摘要图](https://www.windhome.win/src/images/wind_home.png)
+![项目摘要图](https://raw.githubusercontent.com/ruanjq/windHome/master/src/images/wind_home.png)
 
 
 ## 前端相关技术：Webpack2.0、、、Angualr4.0、、、Typescript、、、ES6 、、、yarn
