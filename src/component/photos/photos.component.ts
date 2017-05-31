@@ -52,9 +52,9 @@ export class PhotosComponent implements OnInit{
 		list[23] = "photo (24).JPG";
 		list[24] = "photo (25).JPG";
 		list[25] = "photo (26).jpg";
-		list[26] = "photo (27).JPG";
-		list[27] = "photo (28).JPG";
-		list[28] = "photo (29).JPG";
+		list[26] = "photo (27).jpg";
+		list[27] = "photo (28).jpg";
+		list[28] = "photo (29).jpg";
 		list[29] = "photo (30).JPG";
 		list[30] = "photo (31).JPG";
 		list[31] = "photo (32).JPG";

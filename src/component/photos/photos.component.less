@@ -1,6 +1,6 @@
 .photos-container {
-    -webkit-column-width: 160px;
-    -moz-column-width: 160px;
+    -webkit-column-width: 200px;
+    -moz-column-width: 200px;
     -webkit-column-gap: 8px;
     -moz-column-gap: 8px;
     margin-top: 40px;padding-left: 10px;
@@ -11,10 +11,20 @@
 /*数据块 砖块*/
 
 .photos-container div {
-    width: 160px;
+    width: 200px;
+    min-height: 100px;
     margin: 10px 0;
-    overflow: hidden;text-align: center;
+    text-align: center;
+    a{color:#000;text-decoration: none;display: block;
+        overflow: hidden;
+    }
     img{
-    	max-width: 100%;
+        transition: opacity 0.2s linear;display: block;
+        opacity:1;
+        &:hover{
+            opacity: 0.8;
+        }
+    	max-width: 100%; min-height: 100%;background: #ddd;
     }
 }
+

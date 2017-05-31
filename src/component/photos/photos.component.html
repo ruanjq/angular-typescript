@@ -1,6 +1,9 @@
 <div id='main-wrapper' class="item">
-	<div class="photos-container">
-		<div  *ngFor="let item of photosList"><img [src]="item" alt="windhomw photos" /></div>
-		
-	</div>
+    <div class="photos-container">
+        <div *ngFor="let item of photosList">
+        	<a href="{{item}}" target="_blank">
+                <img lazy="{{item}}"  alt="windhome photos" >
+            </a>
+        </div>
+    </div>
 </div>
