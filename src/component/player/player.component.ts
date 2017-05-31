@@ -10,28 +10,28 @@ export class PlayerComponent implements AfterViewInit {
 
     private audioList: Array < any > = [{
         id: 0,
-        name: "Flower Dance",
-        images: 'http://www.windhome.win/src/images/Flower Dance.jpg',
-        src: "http://www.windhome.win/src/source/Flower Dance.mp3"
+        name: "DJ OKAWARI - Flower Dance.mp3",
+        images: 'http://p1.music.126.net/P1ac-TWkFzjDqcvl5_oK7Q==/881808325476577.jpg?param=130y130',
+        src: "http://www.windhome.win/src/source/DJ OKAWARI - Flower Dance.mp3"
     }, {
         id: 1,
-        name: "Illusionary Daytime",
-        images: 'http://www.windhome.win/src/images/Illusionary Daytime.jpg',
-        src: "http://www.windhome.win/src/source/Illusionary Daytime.mp3"
+        name: "Shirfine - Illusionary Daytime.mp3",
+        images: 'http://p3.music.126.net/8xNVCemkSNQptEyNw1PHKg==/8914840278033758.jpg?param=130y130',
+        src: "http://www.windhome.win/src/source/Shirfine - Illusionary Daytime.mp3"
     }, {
         id: 2,
-        name: "Luv Letter",
-        images: 'http://www.windhome.win/src/images/Luv Letter.jpg',
-        src: "http://www.windhome.win/src/source/Luv Letter.mp3"
+        name: "DJ OKAWARI - Luv Letter.mp3",
+        images: 'http://p4.music.126.net/YXY1vPG5rtdV7w_cWDnNWw==/884007348732141.jpg?param=130y130',
+        src: "http://www.windhome.win/src/source/DJ OKAWARI - Luv Letter.mp3"
     },{
         id: 3,
-        name: "夜的钢琴曲五",
-        images: 'http://www.windhome.win/src/images/夜的钢琴曲五.jpg',
-        src: "http://www.windhome.win/src/source/夜的钢琴曲五.mp3"
+        name: "Alan Walker - Faded.mp3",
+        images: 'http://p1.music.126.net/8dzD62VK8jLDbhEqkmpIAg==/18277181788626198.jpg?param=130y130',
+        src: "http://www.windhome.win/src/source/Alan Walker - Faded.mp3"
     },{
         id: 4,
-        name: "Two Steps From Hell - Victory",
-        images: 'http://www.windhome.win/src/images/Two Steps From Hell - Victory.jpg',
+        name: "Two Steps From Hell - Victory.mp3",
+        images: 'http://p4.music.126.net/Cn65Vr_LgPzS-Slkmuz8Hg==/2919203372658131.jpg?param=130y130',
         src: "http://www.windhome.win/src/source/Two Steps From Hell - Victory.mp3"
     }];
 
