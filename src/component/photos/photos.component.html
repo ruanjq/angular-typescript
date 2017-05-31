@@ -1,6 +1,6 @@
 <div id='main-wrapper' class="item">
 	<div class="photos-container">
-		<div><img src="http://www.windhome.win/images/P_00.jpg" /></div>
+		<div  *ngFor="let item of photosList"><img [src]="item" alt="windhomw photos" /></div>
 		
 	</div>
 </div>

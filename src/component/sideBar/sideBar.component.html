@@ -37,7 +37,8 @@
                 <ul>
                     <li><a routerLink="/home">风之家</a></li>
                     <li><a routerLink="/photos">照片集</a></li>
-                    <li><a href="/README.html">关&nbsp;&nbsp;于</a></li>
+                    <li><a routerLink="/photos">关于我</a></li>
+                    <li><a href="/README.html">技术栈</a></li>
                 </ul>
             
             </div>
@@ -46,7 +47,7 @@
     <div class="sidebar section" id="sidebarright">
         
         <div class="widget Label" data-version="1" id="Label1">
-            <h2 style="letter-spacing: 2px;">标签</h2>
+            <h2 style="letter-spacing: 2px;">标签分类</h2>
             <div class="widget-content list-label-widget-content tags-list">
                 <ul>
                     <li title="{{item?.tags_name}}" *ngFor="let item of tagsList" (click)="blogTags(item?.tags_name)">
@@ -71,6 +72,7 @@
         </div>
 
         <div class="widget HTML" data-version="1" id="HTML2">
+            <h2 style="letter-spacing: 2px;">音乐小窝</h2>
             <player></player>
         
         </div>
