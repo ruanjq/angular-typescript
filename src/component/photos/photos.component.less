@@ -1,9 +1,9 @@
 .photos-container {
-    -webkit-column-width: 200px;
-    -moz-column-width: 200px;
+    column-width: 200px;
     -webkit-column-gap: 8px;
     -moz-column-gap: 8px;
-    margin-top: 40px;padding-left: 10px;
+    margin-top: 40px;
+    padding-left: 10px;
     margin-bottom: 40px;
 }
 
@@ -12,19 +12,40 @@
 
 .photos-container div {
     width: 200px;
-    min-height: 100px;
     margin: 10px 0;
     text-align: center;
-    a{color:#000;text-decoration: none;display: block;
+    a {
+        color: #000;
+        text-decoration: none;
+        display: block;
         overflow: hidden;
     }
-    img{
-        transition: opacity 0.2s linear;display: block;
-        opacity:1;
-        &:hover{
+    img {
+        transition: opacity 0.2s linear;
+        display: block;
+        opacity: 1;
+        &:hover {
             opacity: 0.8;
         }
-    	max-width: 100%; min-height: 100%;background: #ddd;
+        max-width: 100%;
+        background: #ddd;
     }
 }
 
+@media screen  and (max-width:420px) {
+    .photos-container {
+        column-width: 160px; margin-top: 15px;
+    }
+    .photos-container div {
+        width: 160px
+    }
+}
+
+@media screen and (max-width:330px) {
+    .photos-container {
+        column-width: 140px;
+    }
+    .photos-container div {
+        width: 140px
+    }
+}

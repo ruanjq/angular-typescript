@@ -3,12 +3,12 @@
         <div class="widget Header" data-version="1" id="Header1">
             <div id="header-inner">
                 <div class="titlewrapper">
-                    <h1 class="title">
+                    <h1 class="title" title="风之家" (click)="isShowSide = false">
                         <a routerLink="/home">风之家</a>
                     </h1>
                 </div>
                 <div class="descriptionwrapper">
-                    <p class="description"><span>喜欢折腾的人,上辈子一定是折翼的天使</span></p>
+                    <p class="description" title="某天,你无端想起一个人,她曾让你对明天有所期许,但是却完全没有出现在你的明天里."><span>某天,你无端想起一个人,她曾让你对明天有所期许,但是却完全没有出现在你的明天里.</span></p>
                 </div>
             </div>
         </div>
@@ -35,10 +35,10 @@
             <h2>Menu</h2>
             <div class="widget-content">
                 <ul>
-                    <li><a routerLink="/home">风之家</a></li>
-                    <li><a routerLink="/photos">照片集</a></li>
-                    <li><a routerLink="/photos">关于我</a></li>
-                    <li><a target="_blank" href="http://www.windhome.win/src/README.html">技术栈</a></li>
+                    <li><a routerLink="/home" (click)="isShowSide = false" title="风之家">风之家</a></li>
+                    <li><a routerLink="/photos" (click)="isShowSide = false" title="照片集">照片集</a></li>
+                    <li><a routerLink="/photos" (click)="isShowSide = false" title="关于我">关于我</a></li>
+                    <li><a target="_blank" (click)="isShowSide = false" title="技术栈" href="http://www.windhome.win/src/README.html">技术栈</a></li>
                 </ul>
             
             </div>
