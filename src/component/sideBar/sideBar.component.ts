@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,AfterViewInit,HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../../js/leancloudService/category.service';
 import { Category } from '../../js/modules/category';
@@ -11,7 +11,7 @@ import { CommonService } from '../../js/modules/commonService';
     providers: [CategoryService,BlogsService,TagsService]
 })
 
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit,AfterViewInit {
 
     isShowSide: boolean = false;
 
@@ -22,11 +22,14 @@ export class SideBarComponent implements OnInit {
 
     currentClass:string = "";
 
+    isFixed:string = "";
 
 
     public search = {
         keywords:''
     };
+
+    @ViewChild('sliderBar') sliderBar_ViewChild:any;
 
     constructor(public categoryService: CategoryService, public tagsService: TagsService,private blogsService:BlogsService,
             private router: Router,private commonService:CommonService) {
@@ -36,15 +39,22 @@ export class SideBarComponent implements OnInit {
 
     }
 
-
-
-
     ngOnInit() {
-
         this.getCategoryData();
         this.getTagsData();
+    }
+
+    ngAfterViewInit(){
+
+    }
+
+    // 监听滚动事件
+    @HostListener('window:scroll') onWindowScroll() {
+        this.sideBarFixed();
         
     }
+
+
 
     showSide() {
         this.isShowSide = !this.isShowSide;
@@ -88,4 +98,24 @@ export class SideBarComponent implements OnInit {
         this.router.navigate(['/blogs-tags', tags]);
     }
 
+
+    private sideBarFixed():void{
+        if(this.isShowSide == true) return;
+        let bar = document.getElementById("sidebarright");
+        let window_height =  document.documentElement.clientHeight;
+        let barwarper_rect = document.getElementById("rsidebar-wrapper").getBoundingClientRect();
+        if(window_height >= bar.clientHeight){
+            if(barwarper_rect.top <= -330){
+                this.isFixed = "1";
+            }else{
+                this.isFixed = "";
+            }
+        }else if(window_height >= 768){
+            if(barwarper_rect.top <= -548){
+                this.isFixed = "2";
+            }else{
+                this.isFixed = "";
+            }
+        }
+    }
 }

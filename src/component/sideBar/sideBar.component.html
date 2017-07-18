@@ -1,4 +1,4 @@
-<div id="rsidebar-wrapper" [ngClass]="{'sidebar_enter':isShowSide,'sidebar_leave':!isShowSide}">
+<div id="rsidebar-wrapper" #sliderBar [ngClass]="{'sidebar_enter':isShowSide,'sidebar_leave':!isShowSide}">
     <div class="header section" id="header">
         <div class="widget Header" data-version="1" id="Header1">
             <div id="header-inner">
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="sidebar section" id="sidebarright">
+    <div class="sidebar section" id="sidebarright" [ngClass]="{'fixed_1':isFixed == '1','fixed_2':isFixed == '2'}">
         
         <div class="widget Label" data-version="1" id="Label1">
             <h2 style="letter-spacing: 2px;">标签分类</h2>
