@@ -125,22 +125,24 @@
                     </div>
                 </div>
             </div>
-            <div class="blog-pager" id="blog-pager" *ngIf="blogList?.pageCount >= 2">
+
+            <div class="blog-pager" id="blog-pager" *ngIf="blogList.pageCount >= 2 && blogList.pageIndex != blogList?.pageCount">
                 <div class="showpageArea">
-                    <div class="showpageOf">
+                    <a class="loading-more-btn" href="javascript:void(0)" (click)="pageMore()" title="加载更多">加载更多...</a>
+                    <loading-more *ngIf="showMore"></loading-more>
+                    <!-- <div class="showpageOf">
                         <span class="">({{blogList?.pageCount}}/</span>
                         <span class="showpagePoint">{{blogList?.pageIndex}})</span>
                     </div>
-                	<div class="pageCtrl">
+                                        <div class="pageCtrl">
                         <span class="showpage" title="首页" (click)="pageChange(1)"><a>首页</a></span>
                         <span class="showpage" title="上一页" [ngClass]="{'disabled':pageIndex == 1}" (click)="pageChange('prev')"><a>上一页</a></span>
                         <span class="showpage" title="下一页" [ngClass]="{'disabled':pageIndex == blogList?.pageCount}" (click)="pageChange('next')"><a>下一页</a></span>
                         <span class="showpage" title="末页" (click)="pageChange(blogList?.pageCount)"><a>末页</a></span>
-                    </div>
-                    
+                    </div> -->
             	</div>
             </div>
-            <div class="clear"></div>
+            
             <div class="blog-feeds">
                 <div class="feed-links">
                     Subscribe to:

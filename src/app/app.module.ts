@@ -21,6 +21,9 @@ import { AboutComponent } from '../component/about/about.component';
 import { SideBarComponent } from '../component/sideBar/sideBar.component';
 import { PlayerComponent } from '../component/player/player.component';
 import { PhotosComponent } from '../component/photos/photos.component';
+
+import { LoadingComponent } from '../component/loading.component';
+
 // 自定义管道
 import { DateFormatPipe } from '../js/modules/dateFormat.pipe';
 
@@ -62,7 +65,7 @@ const routerConfig:Routes = [
 		ResumeComponent,
 		PlayerComponent,
 		PhotosComponent,
-		AboutComponent,SideBarComponent,DateFormatPipe,LazyDirective
+		AboutComponent,SideBarComponent,DateFormatPipe,LazyDirective,LoadingComponent
 	],
 	providers:[Variable,CommonService],
 	bootstrap: [ AppComponent ]

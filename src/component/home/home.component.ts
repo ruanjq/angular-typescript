@@ -12,9 +12,13 @@ import { CommonService } from '../../js/modules/commonService';
 export class HomeComponent implements OnInit {
 
     blogList:any = {
-    	data:[]
+    	data:[],
+        pageIndex:1,
+        pageCount:0,
+        total:0
     };
     pageIndex:number = 1;
+    showMore:boolean = false;
     constructor(private blogsService: BlogsService,private route: ActivatedRoute,private router: Router,public commonService:CommonService) {
 
     }
@@ -70,14 +74,25 @@ export class HomeComponent implements OnInit {
         })
     }
 
+    // 分页查询，加载数据
     private getData(pageIndex:number){
     	this.blogsService.getPageList(pageIndex).then((res: any) => {
-            // console.log(res);
-            this.pageIndex = res.pageIndex;
-            this.blogList = res;
+            this.blogList.pageCount = res.pageCount;
+            this.blogList.pageIndex = res.pageIndex;
+            this.blogList.total = res.total;
+            this.blogList.data = this.blogList.data.concat(res.data);
+            console.log(this.blogList);
+            this.showMore = false;
         }, err => {
 
         })
+    }
+
+    private pageMore(){
+        this.showMore = true;
+        setTimeout(() =>{
+            this.getData(this.pageIndex + 1);
+        },2000)
     }
 
     private pageChange(ctr:any){
