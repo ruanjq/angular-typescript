@@ -28,10 +28,7 @@ export class PhotosComponent implements OnInit {
         let prefix_url = "http://www.windhome.win/src/images/My%20Photos/";
         list.push("photo (1).PNG");
         list.push("photo (2).JPG");
-        list.push("photo (3).JPG");
         list.push("photo (4).JPG");
-        list.push("photo (5).JPG");
-        list.push("photo (6).JPG");
         list.push("photo (7).JPG");
         list.push("photo (8).JPG");
         list.push("photo (9).JPG");
@@ -52,7 +49,6 @@ export class PhotosComponent implements OnInit {
         list.push("photo (24).JPG");
         list.push("photo (25).JPG");
         list.push("photo (26).jpg");
-        list.push("photo (27).jpg");
         list.push("photo (28).jpg");
         list.push("photo (29).jpg");
         list.push("photo (30).JPG");
@@ -83,6 +79,7 @@ export class PhotosComponent implements OnInit {
         list.push("photo (58).JPG");
         list.push("photo (59).JPG");
         list.push("photo (60).JPG");
+        list.push("photo (61).jpg");
 
         return list.map(item => prefix_url + item);
     }

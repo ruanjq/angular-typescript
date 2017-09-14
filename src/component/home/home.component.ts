@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
             this.blogList.pageIndex = res.pageIndex;
             this.blogList.total = res.total;
             this.blogList.data = this.blogList.data.concat(res.data);
-            console.log(this.blogList);
+            // console.log(this.blogList);
             this.showMore = false;
         }, err => {
 
