@@ -1,4 +1,4 @@
-import { Component, AfterViewInit,Renderer2,Inject  } from '@angular/core';
+import { Component, AfterViewInit,Renderer2,Inject,OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/platform-browser';
     styles: [`${require('./photos.component.less')}`]
 })
 
-export class PhotosComponent implements AfterViewInit {
+export class PhotosComponent implements OnInit {
 
 
      
@@ -18,7 +18,7 @@ export class PhotosComponent implements AfterViewInit {
 
 
 
-    ngAfterViewInit() {
+    ngOnInit() {
         let s = this._renderer2.createElement('script');
         s.type = `text/javascript`;
         s.text = `
@@ -54,10 +54,14 @@ export class PhotosComponent implements AfterViewInit {
                             return this;
                         },
                         setPositon: function(elem, index) {
+                            var _height = Math.floor(elem.offsetWidth / elem.getAttribute("data-w") * elem.getAttribute("data-h"));
                             var size = {
                                 width: elem.offsetWidth,
-                                height: elem.offsetHeight
+                                height: _height
                             }
+                            elem.style.width = size.width + "px";
+                            elem.style.height = size.height + "px";
+                            // console.log(size);
                             var p = { left: 0, top: 0 }
 
                             // 非最左边
