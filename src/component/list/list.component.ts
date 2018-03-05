@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component,AfterViewInit } from '@angular/core';
 
 
 @Component({
@@ -12,6 +12,13 @@ import { Component } from '@angular/core';
 	]
 })
 
-export class BlogsListComponent {
+export class BlogsListComponent implements AfterViewInit {
 
+	constructor(){
+		
+	}
+
+	ngAfterViewInit(){
+
+	}
 }
