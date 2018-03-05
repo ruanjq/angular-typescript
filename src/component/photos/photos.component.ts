@@ -131,17 +131,15 @@ export class PhotosComponent implements OnInit {
                 return this || (typeof window !== 'undefined' ? window : global);
             });
 
-            window.onload = function (argument) {
-                Marsonry({
-                    containerId:'J_masonry_list',
-                    selectorItem:'.masonry-item',
-                    itemMargin:20,
-                    resize:true,
-                    after:function(dom){
-                        // complete to do
-                    }
-                });
-            }
+            Marsonry({
+                containerId:'J_masonry_list',
+                selectorItem:'.masonry-item',
+                itemMargin:20,
+                resize:true,
+                after:function(dom){
+                    // complete to do
+                }
+            });
         `;
 
         this._renderer2.appendChild(this._document.body, s);
