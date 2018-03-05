@@ -1,51 +1,40 @@
 .photos-container {
-    column-width: 200px;
+    /* column-width: 200px;
     -webkit-column-gap: 8px;
-    -moz-column-gap: 8px;
+    -moz-column-gap: 8px; */
     margin-top: 40px;
     padding-left: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 40px;position: relative;
 }
 
 
 /*数据块 砖块*/
 
-.photos-container div {
-    width: 200px;
-    margin: 10px 0;
-    text-align: center;
-    a {
-        color: #000;
-        text-decoration: none;
-        display: block;
-        overflow: hidden;
-    }
+.photos-container .masonry-item {
+    
+    
+
+    color: #000;
+    text-decoration: none;
+    display: block; width: 268px;height: auto;
+    overflow: hidden;
+    
     img {
-        transition: opacity 0.2s linear;
+        transition: all 0.2s linear;
         display: block;
         opacity: 1;
         &:hover {
-            opacity: 0.8;
+            transform: scale(1.15);
         }
         max-width: 100%;
         background: #ddd;
     }
 }
-
-@media screen  and (max-width:420px) {
-    .photos-container {
-        column-width: 160px; margin-top: 15px;
-    }
-    .photos-container div {
-        width: 160px
+ 
+@media screen  and (max-width:414px) {
+    
+    .photos-container .masonry-item {
+        width: 160px;
     }
 }
 
-@media screen and (max-width:330px) {
-    .photos-container {
-        column-width: 140px;
-    }
-    .photos-container div {
-        width: 140px
-    }
-}

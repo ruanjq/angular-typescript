@@ -33,6 +33,11 @@ export class PlayerComponent implements AfterViewInit {
         name: "Two Steps From Hell - Victory.mp3",
         images: 'http://p4.music.126.net/Cn65Vr_LgPzS-Slkmuz8Hg==/2919203372658131.jpg?param=130y130',
         src: "http://www.windhome.win/src/source/Two Steps From Hell - Victory.mp3"
+    },{
+        id: 5,
+        name: "石进-夜的钢琴曲五.mp3",
+        images: 'http://pic.xiami.net/images/album/img1/77201/4065321287132984.jpg@1e_1c_100Q_185w_185h',
+        src: "http://www.windhome.win/src/source/shijin - ydgqq5.mp3"
     }];
 
     private currentAudio = this.audioList[0];
