@@ -10,6 +10,8 @@
 ![项目摘要图](https://raw.githubusercontent.com/ruanjq/windHome/master/src/images/wind_home.png)
 
 
+## css3 @media 响应式布局，适配pc端、移动端
+
 ## 前端相关技术：Webpack2.0、、、Angualr4.0、、、Typescript、、、ES6 、、、yarn
 	
 	1: 依赖nodejs，需要先安装nodejs环境，安装nodejs 后执行命令 npm install
@@ -38,6 +40,7 @@
 
 	4: src目录
 		4.1：项目开发源代码目录，包括ts脚本文件，css,less样式文件，images图片文件，，component,,mp3 音乐文件.
+		
 		4.2：index.html 	单页引用入口页面
 		     main.ts    	页面入口脚本文件
 		     polyfills.ts、vendors.ts   angular2.0 运行所依赖的核心代码

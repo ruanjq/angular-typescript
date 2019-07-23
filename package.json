@@ -1,7 +1,7 @@
 {
   "name": "wind-home",
   "version": "1.0.0",
-  "description": "A wind-home project webpack starter for Angular4",
+  "description": "风之家个人博客",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --progress --port 8080 --open",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
