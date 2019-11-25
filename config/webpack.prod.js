@@ -9,7 +9,7 @@ module.exports = webpackMerge(commonConfig, {
 
     output: {
         path: helpers.root('dist'),
-        publicPath: '/angular-typescript/dist',
+        publicPath: '/angular-typescript/dist/',
         filename: 'js/[name].[hash].js',
         chunkFilename: '[id].[hash].chunk.js'
     },
