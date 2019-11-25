@@ -1,18 +1,16 @@
 
 
-# 风之家博客(wind-home) 
+# angular+typescript(angular+typescript) 
 
 
 
-## [风之家](http://www.windhome.win "风之家博客")  
+## [angular+typescript](https://ruanjq.github.io/angular-typescript/ "angular+typescript")  
 
-
-![项目摘要图](https://raw.githubusercontent.com/ruanjq/windHome/master/src/images/wind_home.png)
+ 
 
 
 ## css3 @media 响应式布局，适配pc端、移动端
-
-![项目摘要图](https://raw.githubusercontent.com/ruanjq/windHome/master/src/images/m_page.png)
+ 
 
 ## 前端相关技术：Webpack2.0、、、Angualr4.0、、、Typescript、、、ES6 、、、yarn
 	

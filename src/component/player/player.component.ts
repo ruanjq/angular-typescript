@@ -12,32 +12,32 @@ export class PlayerComponent implements AfterViewInit {
         id: 0,
         name: "DJ OKAWARI - Flower Dance.mp3",
         images: 'http://p1.music.126.net/P1ac-TWkFzjDqcvl5_oK7Q==/881808325476577.jpg?param=130y130',
-        src: "http://www.windhome.win/src/source/DJ OKAWARI - Flower Dance.mp3"
+        src: "https://ruanjq.github.io/angular-typescript/src/source/DJ OKAWARI - Flower Dance.mp3"
     }, {
         id: 1,
         name: "Shirfine - Illusionary Daytime.mp3",
         images: 'http://p3.music.126.net/8xNVCemkSNQptEyNw1PHKg==/8914840278033758.jpg?param=130y130',
-        src: "http://www.windhome.win/src/source/Shirfine - Illusionary Daytime.mp3"
+        src: "https://ruanjq.github.io/angular-typescript/src/source/Shirfine - Illusionary Daytime.mp3"
     }, {
         id: 2,
         name: "DJ OKAWARI - Luv Letter.mp3",
         images: 'http://p4.music.126.net/YXY1vPG5rtdV7w_cWDnNWw==/884007348732141.jpg?param=130y130',
-        src: "http://www.windhome.win/src/source/DJ OKAWARI - Luv Letter.mp3"
+        src: "https://ruanjq.github.io/angular-typescript/src/source/DJ OKAWARI - Luv Letter.mp3"
     },{
         id: 3,
         name: "Alan Walker - Faded.mp3",
         images: 'http://p1.music.126.net/8dzD62VK8jLDbhEqkmpIAg==/18277181788626198.jpg?param=130y130',
-        src: "http://www.windhome.win/src/source/Alan Walker - Faded.mp3"
+        src: "https://ruanjq.github.io/angular-typescript/src/source/Alan Walker - Faded.mp3"
     },{
         id: 4,
         name: "Two Steps From Hell - Victory.mp3",
         images: 'http://p4.music.126.net/Cn65Vr_LgPzS-Slkmuz8Hg==/2919203372658131.jpg?param=130y130',
-        src: "http://www.windhome.win/src/source/Two Steps From Hell - Victory.mp3"
+        src: "https://ruanjq.github.io/angular-typescript/src/source/Two Steps From Hell - Victory.mp3"
     },{
         id: 5,
         name: "石进-夜的钢琴曲五.mp3",
         images: 'http://pic.xiami.net/images/album/img1/77201/4065321287132984.jpg@1e_1c_100Q_185w_185h',
-        src: "http://www.windhome.win/src/source/shijin - ydgqq5.mp3"
+        src: "https://ruanjq.github.io/angular-typescript/src/source/shijin - ydgqq5.mp3"
     }];
 
     private currentAudio = this.audioList[0];

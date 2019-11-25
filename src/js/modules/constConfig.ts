@@ -11,7 +11,7 @@ export class Variable {
 		if(process.env === 'dev'){
 			return "http://localhost:8891/src/json/";
 		}else{
-			return "http://www.windhome.win/src/json/";
+			return "https://ruanjq.github.io/angular-typescript/src/json/";
 		}
 	}
 
